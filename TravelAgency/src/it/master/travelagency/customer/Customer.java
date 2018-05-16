@@ -64,5 +64,10 @@ public class Customer implements CustomerInterface {
 		System.out.println("Sending an email notification");
 		System.out.println(msgTxt);
 	}
+	
+	@Override
+	public String toString() {
+		return this.name;
+	}
 }
 

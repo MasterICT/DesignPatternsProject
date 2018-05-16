@@ -39,4 +39,9 @@ public abstract class CustomerType implements CustomerInterface {
 	public void sendNotification(String msgTxt) {
 		customerInterface.sendNotification(msgTxt);
 	}
+	
+	@Override
+	public String toString() {
+		return customerInterface.toString();
+	}
 }

@@ -15,11 +15,16 @@ public class MultiStep extends Travel {
 	@Override
 	public void addStep(Travel travel) throws Exception {
 		steps.add(travel);
+		cost += travel.getCost();
 	}
 
 	@Override
 	public boolean removeStep(Travel travel) throws Exception {
-		return steps.remove(travel);
+		boolean ret = steps.remove(travel);
+		if (ret) {
+			cost -= travel.getCost();
+		}
+		return ret;
 	}
 
 	@Override
@@ -39,11 +44,6 @@ public class MultiStep extends Travel {
 
 	@Override
 	public int getCost() {
-		if (cost == 0) {
-			for (Travel step : steps) {
-				cost += step.getCost();
-			}
-		}
 		return cost;
 	}
 }

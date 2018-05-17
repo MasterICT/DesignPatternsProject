@@ -20,11 +20,11 @@ public class MainApp {
 		Travel outbound = new Step("Outbound flight", 100, "Torino", "Mombasa");
 		africa.addStep(outbound);
 		
+		Travel safari = new Step("Safari", 200, "Mombasa", "The Savannah");
+		africa.addStep(safari);
+		
 		Travel inbound = new Step("Inbound flight", 700, "Mombasa", "Torino");
 		africa.addStep(inbound);
-		
-		Date d = dateFormat.parse("01/01/1960");
-		System.out.println(d);
 		
 		Customer ginoBase = new Customer("Gino", dateFormat.parse("01/01/1960"), "gino@ginomail.com", "Passport", "123");
 		Traveler ginoTraveler = new Traveler(ginoBase, africa);

@@ -104,6 +104,9 @@ public class MainApp {
 		supriseAtSea.removeStep(kingSizeBanquet);
 		printPaidFor(supriseAtSea);
 		
+		printLog("Gino shares his trip once more");
+		ginoMobile.share(africaTrip, Constants.POPULAR_SOCIAL_NETWORK);
+		
 		printLog("Tina decides to open a blog about her experience");
 		Blogger tinaBlogger = new Blogger(tinaTraveler, "I hear the drums echoing tonight");
 		tinaBlogger.publish("I bless the rains down in " + tinaTraveler.getTravel().getName());

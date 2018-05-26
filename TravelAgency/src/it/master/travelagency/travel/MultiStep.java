@@ -46,4 +46,42 @@ public class MultiStep extends Travel {
 	public int getCost() {
 		return cost;
 	}
+	
+	/**
+	 * The paidfor value trickles down to all the steps.
+	 */
+	@Override
+	public void setPaidFor(boolean paid) {
+		for (Travel step : steps) {
+			step.setPaidFor(paid);
+		}
+	}
+	
+	/**
+	 * Cycles through the steps and adds the remaining cost of every unpaid one.
+	 */
+	@Override
+	public int getCostToPay() {
+		if (paidFor) return 0;
+		int toPay = 0;
+		for (Travel step : steps) {
+			toPay += step.getCostToPay();
+		}
+		return toPay;
+	}
+	
+	/**
+	 * Cycles through the steps: as soon as an upaid one is found the whole trip
+	 * is not paid for, so it returns false. True otherwise.
+	 */
+	@Override
+	public boolean isPaidFor() {
+		boolean paid = true;
+		for (Travel step : steps) {
+			if (!step.isPaidFor()) {
+				paid = false;
+			}
+		}
+		return paid;
+	}
 }

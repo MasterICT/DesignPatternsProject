@@ -9,6 +9,7 @@ public class Step extends Travel {
 		super(name, cost);
 		this.from = from;
 		this.to = to;
+		paidFor = false;
 	}
 
 	@Override
@@ -34,6 +35,24 @@ public class Step extends Travel {
 	@Override
 	public int getCost() {
 		return cost;
+	}
+
+	@Override
+	public void setPaidFor(boolean paid) {
+		this.paidFor = paid;
+	}
+	
+	/**
+	 * The cost to pay is 0 if the step is paid.
+	 */
+	@Override
+	public int getCostToPay() {
+		return paidFor ? 0 : cost;
+	}
+
+	@Override
+	public boolean isPaidFor() {
+		return this.paidFor;
 	}
 
 }

@@ -61,8 +61,11 @@ public class Customer implements CustomerInterface {
 	
 	@Override
 	public void sendNotification(String msgTxt) {
-		System.out.println("Sending an email notification");
+		System.out.println("***");
+		System.out.println("Sending an email notification to " + this.getName()
+			+ " at the address " + this.getEmail());
 		System.out.println(msgTxt);
+		System.out.println("***");
 	}
 	
 	@Override

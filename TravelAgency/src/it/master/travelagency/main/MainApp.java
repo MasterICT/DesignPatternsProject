@@ -75,18 +75,18 @@ public class MainApp {
 		ginoBuyer.pay(africaTrip);
 		
 		printLog("In order to save face he adds a surprise activity and pays for it");
-		Travel boatSurprise = new MultiStep("Boat excursion surprise");
+		Travel supriseAtSea = new MultiStep("Boat excursion surprise");
 		Travel boatRide = new Step("Boat ride", 20, "Mombasa", "Sea");
 		Travel scubaExcursion = new Step("Scuba diving", 2, "The boat", "Underwater");
-		boatSurprise.addStep(boatRide);
-		boatSurprise.addStep(scubaExcursion);
+		supriseAtSea.addStep(boatRide);
+		supriseAtSea.addStep(scubaExcursion);
 		
 		// adding the surprise to the main trip
-		africaTrip.addStep(boatSurprise);
-		System.out.println(boatSurprise);
+		africaTrip.addStep(supriseAtSea);
+		System.out.println(supriseAtSea);
 		printPaidFor(africaTrip);
 		
-		ginoBuyer.pay(boatSurprise);
+		ginoBuyer.pay(supriseAtSea);
 		
 		// alternatively he could have paid for the individual steps
 		/*ginoBuyer.pay(boatRide);
@@ -94,6 +94,15 @@ public class MainApp {
 		
 		printPaidFor(africaTrip);
 		printTransactionHistory(ginoBuyer);
+		
+		printLog("Gino wants to add a supersize meal too,"
+				+ " but has second thoughts since it's very expensive.\n"
+				+ "He removes it so the trip becomes paid again.");
+		Travel kingSizeBanquet = new Step("Kingsize Banquet", 500, "The boat", "The restaurant");
+		supriseAtSea.addStep(kingSizeBanquet);
+		printPaidFor(supriseAtSea);
+		supriseAtSea.removeStep(kingSizeBanquet);
+		printPaidFor(supriseAtSea);
 		
 		printLog("Tina decides to open a blog about her experience");
 		Blogger tinaBlogger = new Blogger(tinaTraveler, "I hear the drums echoing tonight");

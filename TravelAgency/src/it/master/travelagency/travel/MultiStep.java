@@ -10,12 +10,14 @@ public class MultiStep extends Travel {
 	public MultiStep(String name) {
 		super(name, 0);
 		steps = new ArrayList<>();
+		System.out.println("Creating multistep travel '" + name + "'");
 	}
 
 	@Override
 	public void addStep(Travel travel) throws Exception {
 		steps.add(travel);
 		cost += travel.getCost();
+		System.out.println("Adding step '" + travel.getName() + "' to '" + name + "'");
 	}
 
 	@Override
@@ -23,6 +25,7 @@ public class MultiStep extends Travel {
 		boolean ret = steps.remove(travel);
 		if (ret) {
 			cost -= travel.getCost();
+			System.out.println("Removing step '" + travel.getName() + "' from '" + name + "'");
 		}
 		return ret;
 	}

@@ -10,7 +10,8 @@ public class Blogger extends CustomerType {
 	}
 	
 	public void publish(String content) {
-		System.out.println("I am publishing: " + content + " on my blog: " + blogName);
+		System.out.println(this.getName() + " is publishing: '" + content + "' on their blog: '"
+				+ blogName + "'");
 	}
 
 	public String getBlogName() {

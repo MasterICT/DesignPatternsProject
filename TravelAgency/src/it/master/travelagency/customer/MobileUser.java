@@ -1,19 +1,25 @@
 package it.master.travelagency.customer;
 
 import it.master.travelagency.Constants;
+import it.master.travelagency.notification.NotificationAdapter;
+import it.master.travelagency.notification.PushNotificationSender;
 import it.master.travelagency.travel.Travel;
 
 public class MobileUser extends CustomerType {
 
+	protected NotificationAdapter notificationSender;
+
 	public MobileUser(CustomerInterface customerInterface) {
 		super(customerInterface);
+
+		this.notificationSender = new PushNotificationSender();
 	}
-	
+
 	@Override
 	public void sendNotification(String msgTxt) {
 		System.out.println("***");
 		System.out.println("Sending a push notification to " + this.getName());
-		System.out.println(msgTxt);
+		this.notificationSender.notify(msgTxt);
 		System.out.println("***");
 	}
 	

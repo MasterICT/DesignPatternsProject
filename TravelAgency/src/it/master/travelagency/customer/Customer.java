@@ -1,14 +1,19 @@
 package it.master.travelagency.customer;
 
+import it.master.travelagency.notification.EmailNotificationSender;
+import it.master.travelagency.notification.NotificationAdapter;
+
 import java.util.Date;
 
 public class Customer implements CustomerInterface {
-	
+
 	private String name;
 	private Date dateOfBirth;
 	private String email;
 	private String idType;
 	private String idNumber;
+
+	protected NotificationAdapter notificationSender;
 	
 	public Customer(String name, Date dateOfBirth, String email, String idType, String idNumber) {
 		this.name = name;
@@ -16,6 +21,7 @@ public class Customer implements CustomerInterface {
 		this.email = email;
 		this.idType = idType;
 		this.idNumber = idNumber;
+		this.notificationSender = new EmailNotificationSender(this.email);
 	}
 	@Override
 	public String getName() {
@@ -40,6 +46,7 @@ public class Customer implements CustomerInterface {
 	
 	public void setEmail(String email) {
 		this.email = email;
+		this.notificationSender = new EmailNotificationSender(this.email);
 	}
 	@Override
 	public String getIdType() {
@@ -62,12 +69,11 @@ public class Customer implements CustomerInterface {
 	@Override
 	public void sendNotification(String msgTxt) {
 		System.out.println("***");
-		System.out.println("Sending an email notification to " + this.getName()
-			+ " at the address " + this.getEmail());
-		System.out.println(msgTxt);
+		System.out.println("Sending an e-mail notification to " + this.getName());
+		this.notificationSender.notify(msgTxt);
 		System.out.println("***");
 	}
-	
+
 	@Override
 	public String toString() {
 		return this.name;

@@ -2,6 +2,11 @@ package it.master.travelagency.notification;
 
 import it.master.travelagency.notification.email.EmailSender;
 
+/**
+ * The <strong>Adapter</strong> used to send e-mail notifications. It wraps
+ * an {@link EmailSender} object.
+ *
+ */
 public class EmailNotificationSender implements NotificationAdapter {
 
     protected String email;

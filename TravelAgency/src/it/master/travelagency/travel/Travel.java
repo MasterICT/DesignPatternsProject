@@ -1,5 +1,11 @@
 package it.master.travelagency.travel;
 
+/**
+ * The <strong>Component</strong> abastract class used by the Composite pattern that models travels. <br />
+ * Implementing methods differently according to the children's nature is deferred to their
+ * concrete implementations.
+ *
+ */
 public abstract class Travel {
 	
 	protected String name;

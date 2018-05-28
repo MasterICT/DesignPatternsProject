@@ -1,5 +1,10 @@
 package it.master.travelagency.travel;
 
+/**
+ * The <strong>Leaf</strong> component of a travel. A <code>Step</code> cannot have other
+ * <code>Step</code>s added to itself.
+ *
+ */
 public class Step extends Travel {
 	
 	private String from;

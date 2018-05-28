@@ -3,6 +3,11 @@ package it.master.travelagency.travel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The <strong>Composite</strong> component. A <code>MultiStep</code> is composed of multiple
+ * {@link Step}s, which are used to calculate costs.
+ *
+ */
 public class MultiStep extends Travel {
 
 	private List<Travel> steps;

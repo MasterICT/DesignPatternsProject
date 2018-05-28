@@ -5,6 +5,11 @@ import java.util.Collection;
 
 import it.master.travelagency.travel.Travel;
 
+/**
+ * <strong>Concrete Decorator</strong>. Models a customer who has the ability to pay for
+ * {@link Travel}s.
+ *
+ */
 public class Buyer extends CustomerType {
 	
 	private Collection<String> transactionHistory;

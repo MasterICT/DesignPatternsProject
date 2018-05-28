@@ -5,6 +5,11 @@ import it.master.travelagency.notification.NotificationAdapter;
 import it.master.travelagency.notification.PushNotificationSender;
 import it.master.travelagency.travel.Travel;
 
+/**
+ * <strong>Concrete Decorator</strong>. Models a customer who has the ability to receive
+ * push notifications. These are handled via a {@link NotificationAdapter}.
+ *
+ */
 public class MobileUser extends CustomerType {
 
 	protected NotificationAdapter notificationSender;

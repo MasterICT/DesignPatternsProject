@@ -2,6 +2,10 @@ package it.master.travelagency.customer;
 
 import java.util.Date;
 
+/**
+ * The <strong>Decorator</strong> that customer types have to extend. 
+ *
+ */
 public abstract class CustomerType implements CustomerInterface {
 	
 	protected CustomerInterface customerInterface;

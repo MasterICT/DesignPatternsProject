@@ -1,5 +1,10 @@
 package it.master.travelagency.customer;
 
+/**
+ * <strong>Concrete Decorator</strong>. Models a customer who has a travel blog and can publish
+ * content to it.
+ *
+ */
 public class Blogger extends CustomerType {
 	
 	private String blogName;

@@ -2,6 +2,10 @@ package it.master.travelagency.customer;
 
 import it.master.travelagency.travel.Travel;
 
+/**
+ * <strong>Concrete Decorator</strong>. Models a customer that goes on a {@link Travel}.
+ *
+ */
 public class Traveler extends CustomerType {
 	
 	private Travel travel;

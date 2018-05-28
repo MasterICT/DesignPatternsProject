@@ -5,6 +5,12 @@ import it.master.travelagency.notification.NotificationAdapter;
 
 import java.util.Date;
 
+/**
+ * The <strong>Concrete Component</strong> of the Decorator pattern. <br />
+ * Provides basic and default functionality. <br />
+ * A {@link NotificationAdapter} sends an e-mail as default notification method. 
+ *
+ */
 public class Customer implements CustomerInterface {
 
 	private String name;

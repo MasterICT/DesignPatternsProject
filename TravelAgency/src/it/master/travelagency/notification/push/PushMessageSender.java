@@ -1,5 +1,9 @@
 package it.master.travelagency.notification.push;
 
+/**
+ * The <strong>Adaptee</strong> implementation that handles sending push notifications
+ *
+ */
 public class PushMessageSender {
 
     public void pushMessage(PushMessageIcon icon, String message) {

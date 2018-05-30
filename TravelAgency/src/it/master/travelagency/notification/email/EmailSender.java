@@ -1,5 +1,8 @@
 package it.master.travelagency.notification.email;
 
+/**
+ * The <strong>Adaptee</strong> implementation that handles sending e-mails
+ */
 public class EmailSender {
 
     public void sendEmail(String emailAddress, String subject, String message) {
